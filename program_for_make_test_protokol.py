@@ -157,88 +157,6 @@ class Renamefiles:
         entry_field_kw.bind('<Return>', event_transfer_kw_to_hk)
 
 
-    #
-    # def entry_path_for_rename_files(self, path_to_id_file):
-    #
-    #     """"
-    #     потрібно, щоб назва папки  якій знаходяться файли відповідала назві майбутнього файлу.
-    #      Тобто користувач перейменовує папку, а файли в ній НІ.
-    #
-    #     """""
-    #     try:
-    #         path = path_to_id_file.get()
-    #
-    #         original_name_dir = path.split(f"\\")[-1]
-    #         split_path_dir = original_name_dir.split('_')
-    #         new_name_file_idetif = split_path_dir[0] + '_ПІ_' + '_'.join(split_path_dir[1:-1])
-    #
-    #         new_name_file = '_'.join(split_path_dir[0:-1])
-    #         # print(
-    #         #     'new_name_file_idetif = ', new_name_file_idetif,
-    #         #     '\nnew_name_file = ', new_name_file
-    #         # )
-    #
-    #         standart_path = path + '\\'  # стала частина шляху до файлу
-    #         for name_file in os.listdir(path):
-    #             #  перевіряємо чи в папці є інші папки аби з ними нічого не зробити
-    #             try:
-    #                 type_file = name_file.split('.')[1]
-    #                 if 'doc' not in name_file:
-    #                     os.remove(standart_path + name_file)  # видаляємо файли, що не відповідають розширенню
-    #             except Exception:
-    #                 pass
-    #
-    #             #  перейменовуємо файли з потрібним розширенням
-    #             try:
-    #                 if 'ПІ' in name_file:
-    #                     new_name_idetif = new_name_file_idetif + '.' + type_file
-    #                     os.rename(standart_path + name_file, standart_path + new_name_idetif)
-    #                 else:
-    #                     new_name_protokol_file = new_name_file + '.' + type_file
-    #                     os.rename(standart_path + name_file, standart_path + new_name_protokol_file)
-    #
-    #             except Exception:
-    #                 pass
-    #
-    #         path_to_id_file.delete(0, 'end')  # Видаляє з поля entry вміст і робить його чистим
-    #     except Exception:
-    #         tk.messagebox.showinfo(title='!!Помилка!!!', message='ПЕРЕВІРТЕ ПРАВИЛЬНІСТЬ ВЕДЕННЯ ШЛЯХУ ДО ФАЙЛІВ')
-    #
-    #         path_to_id_file.delete(0, 'end')  # Видаляє з поля entry вміст і робить його чистим
-
-    # # видалення всіх фалів з папки
-    # # спочатку скануємо вміст папки, а потім видаляємо те що там є через задання шляху до відповіного файлу
-
-
-# class KwatIn_hk:
-#     def __init__(self,
-#                  rowFrame,
-#                  root
-#                  ):
-#         self.rowFrame = rowFrame
-#         self.root = root
-#
-#     def frame_where_transwer_kw(self):
-#         var_kw = tk.StringVar()  # змінна для маніпуляції
-#         var_kw.set('')
-#         lbl_frm_transwer_kw = tk.LabelFrame(self.root, text="ПЕРЕВЕДЕННЯ KW->HK ", width=30, height=20)
-#         lbl_frm_transwer_kw.grid(row=self.rowFrame, column=3, pady=10, padx=30)
-#
-#         entry_field_kw = tk.Entry(lbl_frm_transwer_kw, width=10, font='12', textvariable=var_kw)
-#         entry_field_kw.grid(row=1, column=1, pady=10, padx=30)
-#
-#         lbl_with_HK = tk.Label(lbl_frm_transwer_kw, text=f'HK =', width=15, height=3, font='15',
-#                                borderwidth=3, bg='green')
-#         lbl_with_HK.grid(row=2, column=1, pady=10, padx=30)
-#
-#         # ----
-#         def event_transfer_kw_to_hk(event):
-#             lbl_with_HK['text'] = f'HK ={round(int(var_kw.get()) * 1.36, 2)}'
-#
-#         # Застосовуємо подiю
-#         entry_field_kw.bind('<Return>', event_transfer_kw_to_hk)
-
-
 root = tk.Tk()
 root.title("ПОМІЧНИК З СТВОРЕННЯ ПРОТОКОЛІВ ВИПРОБУВАНЬ")
 # root.geometry('690x300')
@@ -287,7 +205,7 @@ if __name__ == '__main__':
     obj_3_renames_files = Renamefiles(rowFrame=3, root=root)
     obj_3_renames_files.build_label_and_btn_Renam()
 
-    # obj_4_transwer_power = KwatIn_hk(rowFrame=3, root=root)
-    # obj_4_transwer_power.frame_where_transwer_kw()
 
     tk.mainloop()
+
+# git token: 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
